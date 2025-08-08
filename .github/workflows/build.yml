@@ -47,7 +47,7 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
         with:
-          platforms: | 
+          platforms: |
             amd64
             arm64
 
@@ -106,7 +106,7 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
         with:
-          platforms: | 
+          platforms: |
             amd64
             arm64
 
@@ -122,7 +122,7 @@ jobs:
             org.opencontainers.image.authors=${{ github.repository_owner }}
             org.opencontainers.image.vendor=${{ github.repository_owner }}
           tags: |
-            type=raw,value=${{ env.SIR_VERSION }}
+            type=raw,value=${{ env.SIR_VERSION }},prefix=v
           flavor: |
             latest=false
 
