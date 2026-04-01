@@ -20,7 +20,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  METABRAINZ_DOCKER_VERSION: v-2025-06-23.0
+  METABRAINZ_DOCKER_VERSION: v-2026-02-12.0
   RABBITMQ_VERSION: 3.13.7
   RABBITMQ_VARIANT: -management
   SIR_VERSION: 4.0.1
@@ -32,7 +32,7 @@ jobs:
   build_rabbitmq:
     name: Build rabbitmq
     if: ${{ ! github.event.repository.private }}
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -40,7 +40,7 @@ jobs:
       - name: Checkout musicbrainz-docker
         uses: actions/checkout@v6
         with:
-          repository: 'metabrainz/musicbrainz-docker'
+          repository: metabrainz/musicbrainz-docker
           ref: ${{ env.METABRAINZ_DOCKER_VERSION }}
           path: musicbrainz-docker
 
@@ -98,7 +98,7 @@ jobs:
   build_sir:
     name: Build sir
     if: ${{ ! github.event.repository.private }}
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
