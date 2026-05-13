@@ -3,7 +3,7 @@
 # Based on https://raw.githubusercontent.com/metabrainz/musicbrainz-docker/refs/heads/master/build/sir/Dockerfile
 
 ARG PYTHON_VERSION=3.13
-ARG BASE_IMAGE_DATE=20250313
+ARG BASE_IMAGE_DATE=20260216
 FROM metabrainz/python:$PYTHON_VERSION-$BASE_IMAGE_DATE
 
 ARG TARGETARCH
@@ -11,8 +11,8 @@ ARG TARGETARCH
 ARG PYTHON_VERSION
 ARG BASE_IMAGE_DATE
 
-ARG SIR_VERSION=4.0.1
-ARG DOCKERIZE_VERSION=v0.9.5
+ARG SIR_VERSION=5.0.0-rc.3
+ARG DOCKERIZE_VERSION=v0.10.1
 
 LABEL org.metabrainz.based-on-image="metabrainz/python:${PYTHON_VERSION}-${BASE_IMAGE_DATE}" \
       org.metabrainz.sir.version="${SIR_VERSION}"
@@ -21,7 +21,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /code
 
-ADD --checksum=5ce298b42760439aa2265044c82c222732e7c726 \
+ADD --checksum=931bed48c98eda808b46748d126892cff0fdc08d \
     --chown=0:0 \
     --chmod=755 \
     --exclude=.github/ \
